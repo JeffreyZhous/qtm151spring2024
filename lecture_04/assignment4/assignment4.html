@@ -14608,7 +14608,7 @@ Print your Emory ID below</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14622,6 +14622,31 @@ Print your Emory ID below</p>
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>2512377</pre>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14759,7 +14784,7 @@ and <code>False</code> otherwise</li>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">list_eligible</span><span class="p">)</span>
 <span class="c1">#python assigns a 0 to False, and 1 to true in the sum.</span>
-
+<span class="c1">#python assigns 6 to this</span>
 <span class="n">list_ineligible</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">list_age</span><span class="p">:</span>
     <span class="c1">#counts for people not over the age of 16 </span>
@@ -15039,7 +15064,19 @@ desired message. Else, do not print anything.</li>
             <span class="n">letter_grade</span> <span class="o">=</span> <span class="n">list_letters</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
             <span class="c1">#if true break into overall for loop and print </span>
             <span class="k">break</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"This student's grade is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">letter_grade</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"The student got a numeric grade of "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span><span class="o">+</span> <span class="s2">" and their letter grade was "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">letter_grade</span><span class="p">))</span>
+
+
+<span class="c1">#or this including numeric grade </span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vec_grades</span><span class="p">:</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">vec_lower</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">letter</span> <span class="o">=</span> <span class="n">vec_letters</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"The student got a numeric grade of "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span> <span class="s2">" and their letter grade was "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15061,11 +15098,16 @@ desired message. Else, do not print anything.</li>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>This student&#39;s grade is B
-This student&#39;s grade is C+
-This student&#39;s grade is A
-This student&#39;s grade is C
-This student&#39;s grade is A-
+<pre>The student got a numeric grade of 80 and their letter grade was B
+The student got a numeric grade of 70 and their letter grade was C+
+The student got a numeric grade of 96 and their letter grade was A
+The student got a numeric grade of 65 and their letter grade was C
+The student got a numeric grade of 92 and their letter grade was A-
+The student got a numeric grade of 80 and their letter grade was B
+The student got a numeric grade of 70 and their letter grade was C+
+The student got a numeric grade of 96 and their letter grade was A
+The student got a numeric grade of 65 and their letter grade was C
+The student got a numeric grade of 92 and their letter grade was A-
 </pre>
 </div>
 </div>
