@@ -49,6 +49,7 @@ DROP TABLE IF EXISTS drivers;
 
 Create empty table from codebook
 -- SQLBook: Code
+-- Active: 1711421170665@@127.0.0.1@5432@jeffreyzhou
 -- Create empty TABLE called "drivers"
 -- This example has five arguments separated by a comma
 -- that contain the "column_name" and "column_type", respectively
@@ -189,7 +190,8 @@ with more than 60 victories
 -- SQLBook: Code
 -- Active: 1711421170665@@127.0.0.1@5432@jeffreyzhou
 -- Write your own code!
-SELECT driver_name, nationality, driver_id, victories FROM drivers;
+SELECT driver_name, nationality, driver_id FROM drivers
+WHERE victories > 60;
 
 -- SQLBook: Markup
 # <span style="color:darkblue"> III. Groupby + Chaining </span>
@@ -201,6 +203,7 @@ Groupby + Aggregate
 -- This command computes summary statistics by nationalitySELECT COUNT(*) AS num_rows,
 -- Including "nationality" (the grouping column) is optional in the select
 SELECT nationality,
+       COUNT(*) AS num_rows,
        SUM(victories) AS sum_victories,
        AVG(victories) AS mean_victories,
        MIN(victories) AS min_victories,
